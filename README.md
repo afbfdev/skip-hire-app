@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Skip Hire App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React front-end application simulating a skips ordering process.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- Project description
+- Features implemented
+- Technical approach
+- How to Launch the Project
+- GitHub link
+- Sandbox link
 
-### `npm start`
+## Project description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This React application aims to provide an intuitive user interface for selecting and ordering skips. The process is divided into several steps, guiding the user through different options.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features implemented
 
-### `npm test`
+* Step Indicator:** * Visual display of progress through the process.
+    * Visual display of progress through the order process.
+    * Updated icons and text for active, completed and upcoming steps.
+    * New:** Adaptation to horizontal scrolling on small screens (smartphones), ensuring that all steps are accessible and legible without clutter.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* SkipCard components:**
+    * Detailed display of each skip option (size, rental period, price).
+    * Skip selection/deselection management.
+      
+## Technical approach
 
-### `npm run build`
+The main objective was to improve the user experience and visual consistency on various screen resolutions, focusing on responsive design, accessibility and aesthetics.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  Card standardization (`SkipCard`):** **
+    * To ensure that all cards have the same height.
+    * Images
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2.  **Badge management :**
+    * Badges (“Not Allowed On The Road” and “Size”) are positioned `absolute` on the map (which is `relative`), allowing them to be superimposed on the image or other elements.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3.  **Price rounding :**
+    * The `calculateTotalPrice` function in `utils/helpers.js` to use `Math.round()` to display integer prices, as required. The `Intl.NumberFormat` currency formatter has also been adjusted (`minimumFractionDigits: 0`, `maximumFractionDigits: 0`) to display no decimals.
 
-### `npm run eject`
+4.  **Improved Accessibility and Compatibility (Keyboard) :**
+    * The `onKeyPress` prop has been replaced by `onKeyDown` on the `SkipCard` component to handle keyboard interactions (Enter, Space), as `onKeyPress` is deprecated in React. `e.preventDefault()` is used to prevent default browser actions on the `Space` event.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5.  **Scrollable Step Indicator (Responsive) :**
+    * For small screens, the `StepIndicatorContainer` uses `display: flex; flex-wrap: nowrap; overflow-x: auto;` combined with a `min-width` on `stepItem` to create a horizontal carousel of steps.
+    * Scrollbars have been hidden for a cleaner look (`scrollbar-width: none;`, `::-webkit-scrollbar`).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to launch the project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1.  **Run the repository:**
+    ```bash
+    git clone [URL_OF_YOUR_GITHUB_DEPOT]
+    cd [name-of-your-project-folder]
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+3.  **Start the application :**
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
+    The application should open in your browser at `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## GitHub link
 
-## Learn More
+htthttps://github.com/afbfdev/skip-hire-app.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Sandbox link (Testable version)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://codesandbox.io/p/github/afbfdev/skip-hire-app/main?import=true&workspaceId=ws_DY1bP9ypdEi7dGKRquz8Cc
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Translated with DeepL.com (free version)
