@@ -70,7 +70,7 @@ The main objective was to improve the user experience and visual consistency on 
 
 ## GitHub link
 
-htthttps://github.com/afbfdev/skip-hire-app.git
+https://github.com/afbfdev/skip-hire-app.git
 
 ## Sandbox link (Testable version)
 
